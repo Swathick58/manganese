@@ -2,15 +2,16 @@ import React from "react";
 
 import "./Product.css";
 import { useNavigate } from "react-router";
-import NavigationBar from "../../components/NavigationBar";
+import NavigationBar from "../../components/navigation-bar/NavigationBar";
 
 const Product = (): React.ReactNode => {
   const navigate = useNavigate();
 
   return (
+    <>
+     <NavigationBar />
     <div className="product-root">
-      <NavigationBar />
-      <h1>Product Route</h1>
+            <h1>Product Route</h1>
       <button
         onClick={() => {
           navigate("/");
@@ -19,6 +20,7 @@ const Product = (): React.ReactNode => {
         Go back to Home
       </button>
     </div>
+    </>
   );
 };
 

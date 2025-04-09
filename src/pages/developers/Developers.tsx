@@ -2,15 +2,16 @@ import React from "react";
 
 import "./Developers.css";
 import { useNavigate } from "react-router";
-import NavigationBar from "../../components/NavigationBar";
+import NavigationBar from "../../components/navigation-bar/NavigationBar";
 
 const Developers = (): React.ReactNode => {
   const navigate = useNavigate();
 
   return (
+    <>
+     <NavigationBar />
     <div className="developers-root">
-      <NavigationBar />
-      <h1>Developers Route</h1>
+            <h1>Developers Route</h1>
       <button
         onClick={() => {
           navigate("/");
@@ -19,6 +20,7 @@ const Developers = (): React.ReactNode => {
         Go back to Home
       </button>
     </div>
+    </>
   );
 };
 
