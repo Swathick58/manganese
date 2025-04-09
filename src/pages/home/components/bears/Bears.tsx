@@ -1,31 +1,11 @@
-import { create } from "zustand";
 import "./Bears.css";
-import { combine } from "zustand/middleware";
+import { useAnimalsStore } from "../../../../hooks/animals-store/animals-store";
 
-const useAnimateStore = create(
-  combine(
-    {
-      animals: 0,
-    },
-    (set) => {
-      return {
-        addAnimals: () => {
-          set((state) => {
-            return {
-              animals: state.animals + 1,
-            };
-          });
-        },
-      };
-    }
-  )
-);
-
-const BearCounter = (): React.ReactNode => {
-  const { animals, addAnimals } = useAnimateStore();
+const Bears = (): React.ReactNode => {
+  const { animals, addAnimals } = useAnimalsStore();
 
   return (
-    <div className="bear-counter-root">
+    <div className="bears-root">
       <p>{animals} bears in the zoo!</p>
       <button
         onClick={() => {
@@ -38,4 +18,4 @@ const BearCounter = (): React.ReactNode => {
   );
 };
 
-export default BearCounter;
+export default Bears;
