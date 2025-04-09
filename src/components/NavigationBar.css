@@ -1,0 +1,12 @@
+.navigation-bar-links {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  justify-content: center;
+  margin: 0px;
+}
+
+.navigation-link-selected {
+  color: red;
+}
